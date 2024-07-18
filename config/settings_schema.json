@@ -1523,7 +1523,7 @@
       {
         "type": "collection",
         "id": "cart_drawer_collection",
-        "label": "collection",
+        "label": "t:settings_schema.cart.settings.cart_drawer.collection.label",
         "info": "t:settings_schema.cart.settings.cart_drawer.collection.info"
       },
       {
