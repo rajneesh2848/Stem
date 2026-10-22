@@ -2,10 +2,10 @@
 /* @font-face {
   font-family:"Jost";
   src: url({{'Jost-VariableFont_wght.eot' | asset_url }});
-  src: url({{'Jost-VariableFont_wght.eot?#iefix' | asset_url;}})format("embedded-opentype"),
-  url({{'Jost-VariableFont_wght.woff' | asset_url;}})format("woff"),
-  url({{'Jost-VariableFont_wght.woff2' | asset_url;}})format("woff2"),
-  url({{'Jost-VariableFont_wght.ttf' | asset_url;}})format("truetype");
+  src: url({{ 'Jost-VariableFont_wght.eot?#iefix' | asset_url }})format("embedded-opentype"),
+  url({{ 'Jost-VariableFont_wght.woff' | asset_url }})format("woff"),
+  url({{ 'Jost-VariableFont_wght.woff2' | asset_url }})format("woff2"),
+  url({{ 'Jost-VariableFont_wght.ttf' | asset_url }})format("truetype");
   font-style:normal;
 }
  */
@@ -16,4 +16,22 @@
     font-style: normal;      
     src: url('{{ "slick.eot" | asset_url }}');
     src: url('{{ "slick.eot" | asset_url | append:'&#iefix' }}') format('embedded-opentype'), url('{{ "slick.woff" | asset_url}}') format('woff'), url('{{ "slick.ttf" | asset_url }}') format('truetype'), url('{{ "slick.svg" | asset_url | append:'#slick'}}') format('svg');
-}
+}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{{'Jost-VariableFont_wght.eot?#iefix' | asset_url;}}"
+  to: "{{ 'Jost-VariableFont_wght.eot?#iefix' | asset_url }}"
+  position: 109..162
+- from: "{{'Jost-VariableFont_wght.woff' | asset_url;}}"
+  to: "{{ 'Jost-VariableFont_wght.woff' | asset_url }}"
+  position: 198..245
+- from: "{{'Jost-VariableFont_wght.woff2' | asset_url;}}"
+  to: "{{ 'Jost-VariableFont_wght.woff2' | asset_url }}"
+  position: 268..316
+- from: "{{'Jost-VariableFont_wght.ttf' | asset_url;}}"
+  to: "{{ 'Jost-VariableFont_wght.ttf' | asset_url }}"
+  position: 340..386
+{%- endcomment -%}
